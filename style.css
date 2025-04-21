@@ -1,0 +1,141 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+/*paleta de colores*/
+:root{
+    --Pale-blue: hsl(225, 100%, 94%);
+    --Bright-blue: hsl(245, 75%, 52%);
+    --Very-pale-blue: hsl(225, 100%, 98%);
+    --Desaturated-blue: hsl(224, 23%, 55%);
+    --Dark-blue: hsl(223, 47%, 23%);
+}
+/*das el tipo de fuente a las letras quitas margenes y esacios internos a la paguina web*/
+*{
+    font-family: "Red Hat Display", "sans-serif";
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/*das medida total ala imagen*/
+img{
+    max-width: 100%;
+}
+/*das altura minima a la paguina web centras el elemento con flex das ancho total de la img, das color de fondo colocas una img con url
+haces que no se repita y das tamaño del contenido es para que sea responsive*/
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--Very-pale-blue);
+    background-image: url(./images/pattern-background-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/*das estilos a la tarjeta principal tamaño, color y radios en las esquinas*/
+.card{
+    background-color: white;
+    width: 400px;
+    border-radius: 20px;
+}
+/*ajustas los elementos a que sean columna*/
+.card-container{
+    display: flex;
+    flex-direction: column;
+}
+/*das a la imagen radios en las esquinas superiores y que sean planos en la parte inferior*/
+.header img{
+    border-radius: 20px 20px 0 0;
+}
+/*ordenas los elementos en columna, alineas el texto al centro das una separacion entre cada uno de 25px y un espacio interior de 20px arriba y abajo y 25 a los lados */
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+    padding: 20px 25px;
+}
+/*poner color al titulo*/
+.title{
+    color: var(--Dark-blue);
+}
+/*espesor a las palabras de 500 y das color*/
+.content{
+    font-weight: 500;
+    color: var(--Desaturated-blue);
+}
+/*centras los elementos y que tengan un espacio entre ellos color de fondo dar radios de 15px y un borde interno de 15px*/
+.plan{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--Very-pale-blue);
+    border-radius: 15px;
+    padding: 15px;
+}
+/*recordatorio usas flex para centrar elementos y das separacion de 15px*/
+.plan div{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+/*colocas los elementos en columna b y span y das separacion de 2px*/
+.plan-info{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+/*color de letra*/
+.plan-info b{
+    color: var(--Dark-blue);
+}
+/*color de letra*/
+.plan-info span{
+    color: var(--Desaturated-blue);
+}
+/*espesor de letra 700 al poner el cursos sobre la palabra change este cambiara de forma a pointer colocamos un subrayado y color*/
+.link{
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline;
+    color: var(--Bright-blue);
+}
+/*flex para centrar elementos y das separacion de 8px*/
+.btns{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+/*borde interior de 8px radios de 8px quitamos el marcado que trae por defecto y al colocar cursur cambiara a pointer*/
+.btns button{
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+/*color de fondo al boton y color de letra blanco*/
+.pay-btn{
+    background-color: var(--Bright-blue);
+    color: white;
+}
+/*color de letra, espesor de 700 y color de fondo blanco*/
+.cancel-btn{
+    color: var(--Desaturated-blue);
+    font-weight: 700;
+    background-color: white;
+}
+/*el hover es para cuando colocas mouse este cambia de color*/
+.cancel-btn:hover{
+    color: var(--Dark-blue);
+}
+/*das medida maxima de ancho de 500px al sobre pasar esa medida esta cambiara a 360px*/
+@media screen and (max-width:500px) {
+    body{
+        background-image: url(./images/pattern-background-mobile.svg);
+    }
+
+    .card{
+        width: 360px;
+    }
+}
